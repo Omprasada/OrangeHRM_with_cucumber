@@ -23,11 +23,18 @@ public class LoginSteps {
 	    driver.get("https://opensource-demo.orangehrmlive.com/");
 	}
 
-	@When("User enters username and password")
-	public void user_enters_username_and_password() {
-		System.out.println("Step2: Enter Username and Password");
-		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
-		driver.findElement(By.id("txtPassword")).sendKeys("admin123");
+	/*
+	 * @When("^User enters \"(.*)\" and \"(.*)\"$") public void
+	 * user_enters_username_and_password(String uname, String pswd) {
+	 * System.out.println("Step2: Enter Username and Password");
+	 * driver.findElement(By.id("txtUsername")).sendKeys(uname);
+	 * driver.findElement(By.id("txtPassword")).sendKeys(pswd);
+	 */
+		@When("^User enters (.*) and (.*)$")
+		public void user_enters_username_and_password(String uname, String pswd) {
+			System.out.println("Step2: Enter Username and Password");
+			driver.findElement(By.id("txtUsername")).sendKeys(uname);
+			driver.findElement(By.id("txtPassword")).sendKeys(pswd);
 	}
 
 	@And("Click on Login button")

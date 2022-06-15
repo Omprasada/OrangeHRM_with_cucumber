@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"html:Reports\\HTMLReports" , 
 				"json:Reports\\jsonReports\\cucumber.json" , 
 				"junit:Reports\\junitReports\\cucmber.xml"},
-		dryRun = false)
+		dryRun = true)
 
 public class RunnerClass {
 
